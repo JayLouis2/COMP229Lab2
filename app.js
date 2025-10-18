@@ -16,6 +16,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
+// Root endpoint for assignment and quick health check
+app.get('/', (req, res) => {
+	res.json({ success: true, message: 'Portfolio API - Node.js, Express & MongoDB' });
+});
+
 app.use('/api/contacts', contactsRouter);
 app.use('/api/projects', projectsRouter);
 app.use('/api/services', servicesRouter);
