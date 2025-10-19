@@ -1,1 +1,12 @@
-stdout is not a tty
+Running API smoke tests against http://localhost:5000/api
+Contacts POST: 201 68f447fb8f98aef6dd917026
+Contacts GET all: 200 1
+Contacts GET by id: 200 68f447fb8f98aef6dd917026
+Contacts PUT: 200 Updated
+Contacts DELETE: 200 contact deleted
+Projects POST: 201 68f447fb8f98aef6dd91702c
+Projects GET by id: 200 Test Project
+Services POST: 201 68f447fb8f98aef6dd917030
+Users POST: 201 68f447fb8f98aef6dd917033
+
+API smoke tests completed successfully.
