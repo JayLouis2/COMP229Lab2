@@ -7,6 +7,7 @@ const contactsRouter = require('./routes/contacts.routes');
 const projectsRouter = require('./routes/projects.routes');
 const servicesRouter = require('./routes/services.routes');
 const usersRouter = require('./routes/users.routes');
+const indexRouter = require('./routes/index');
 
 const { errorHandler } = require('./middlewares/errorHandler');
 
@@ -16,10 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-// Root endpoint for assignment and quick health check
-app.get('/', (req, res) => {
-	res.json({ success: true, message: 'Portfolio API - Node.js, Express & MongoDB' });
-});
+// Root router (assignment requirement)
+app.use('/', indexRouter);
 
 app.use('/api/contacts', contactsRouter);
 app.use('/api/projects', projectsRouter);
