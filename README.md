@@ -1,19 +1,14 @@
-# Portfolio Backend
+Portfolio backend (Node + Express + Mongoose)
 
-Simple Express/Mongoose backend for COMP229 portfolio assignment.
+Endpoints:
+- GET  /api/contacts
+- POST /api/contacts
+- GET  /api/contacts/:id
+- PUT  /api/contacts/:id
+- DELETE /api/contacts/:id
+- DELETE /api/contacts
 
-Prerequisites:
-- Node.js (14+)
-- MongoDB (local or Atlas)
+Same pattern for /api/projects, /api/services, /api/users
 
-Setup:
-1. Install dependencies: npm install
-2. Create a `.env` file with MONGO_URI (optional) and PORT.
-   Example `.env` (see `.env.example`):
-
-Try it:
-1. Start server: npm run dev (requires nodemon) or npm start
-2. Use Postman/Thunder Client to hit endpoints at http://localhost:3000/api/contacts, /api/projects, /api/services, /api/users
-
-Notes:
-- Password hashing and auth are intentionally omitted for the assignment scope.
+Run:
+- npm run dev (requires nodemon)

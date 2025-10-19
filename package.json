@@ -11,18 +11,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  
   "devDependencies": {
     "nodemon": "^2.0.22"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
     "express": "^4.21.2",
     "http-errors": "^2.0.0",
     "mongoose": "^7.8.7",
-    "morgan": "^1.10.1",
-    "axios": "^1.4.0"
+    "morgan": "^1.10.1"
   },
   "repository": {
     "type": "git",
@@ -32,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/JayLouis2/COMP229Lab2/issues"
   },
-  "homepage": "https://github.com/JayLouis2/COMP229Lab2#readme"
+  "homepage": "https://github.com/JayLouis2/COMP229Lab2#readme",
+  "directories": {
+    "test": "test"
+  }
 }
