@@ -25,6 +25,9 @@ app.use('/api/projects', projectsRouter);
 app.use('/api/services', servicesRouter);
 app.use('/api/users', usersRouter);
 
+// Handle favicon.ico requests
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 app.use((req, res, next) => next(createError(404, 'Endpoint not found')));
 app.use(errorHandler);
 

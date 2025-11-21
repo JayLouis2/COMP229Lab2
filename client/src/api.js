@@ -1,4 +1,5 @@
-const baseUrl = '/api' // same-origin; backend runs on same host/port in production or use proxy in dev
+// Use environment variable for API URL in production, fallback to /api for local development
+const baseUrl = import.meta.env.VITE_API_URL || '/api'
 
 async function request(url, options = {}){
   const res = await fetch(url, { headers: { 'Content-Type': 'application/json' }, ...options })
