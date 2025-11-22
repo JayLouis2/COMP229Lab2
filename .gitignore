@@ -3,3 +3,8 @@ node_modules/
 .vscode/
 npm-debug.log
 /dist
+*.log
+*.bak
+*.tmp
+*.old
+*.zip
