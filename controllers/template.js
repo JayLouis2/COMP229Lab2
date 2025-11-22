@@ -14,7 +14,10 @@ exports.crudController = function (Model, name) {
         const item = await Model.findById(req.params.id);
         if (!item) return next(createError(404, name + ' not found'));
         res.json(item);
-      } catch (err) { next(err); }
+      } catch (err) {
+        if (err.name === 'CastError') return next(createError(400, 'Invalid ' + name + ' ID'));
+        next(err);
+      }
     },
 
     create: async function (req, res, next) {
@@ -26,7 +29,7 @@ exports.crudController = function (Model, name) {
 
     update: async function (req, res, next) {
       try {
-        const updated = await Model.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const updated = await Model.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
         if (!updated) return next(createError(404, name + ' not found'));
         res.json(updated);
       } catch (err) { next(err); }
@@ -37,7 +40,10 @@ exports.crudController = function (Model, name) {
         const deleted = await Model.findByIdAndDelete(req.params.id);
         if (!deleted) return next(createError(404, name + ' not found'));
         res.json({ message: name + ' deleted' });
-      } catch (err) { next(err); }
+      } catch (err) {
+        if (err.name === 'CastError') return next(createError(400, 'Invalid ' + name + ' ID'));
+        next(err);
+      }
     },
 
     removeAll: async function (req, res, next) {

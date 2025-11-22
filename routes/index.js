@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Root endpoint required by assignment
 router.get('/', (req, res) => {
-  res.json({ message: 'Welcome to my porfolio application' });
+  res.json({ message: 'Welcome to my portfolio application' });
 });
 
 module.exports = router;
