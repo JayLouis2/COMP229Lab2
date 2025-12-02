@@ -7,6 +7,7 @@ const contactsRouter = require('./routes/contacts.routes');
 const projectsRouter = require('./routes/projects.routes');
 const servicesRouter = require('./routes/services.routes');
 const usersRouter = require('./routes/users.routes');
+const authRouter = require('./routes/auth.routes');
 const indexRouter = require('./routes/index');
 
 const { errorHandler } = require('./middlewares/errorHandler');
@@ -20,6 +21,7 @@ app.use(cors());
 // Root router (assignment requirement)
 app.use('/', indexRouter);
 
+app.use('/api/auth', authRouter);
 app.use('/api/contacts', contactsRouter);
 app.use('/api/projects', projectsRouter);
 app.use('/api/services', servicesRouter);
